@@ -1,17 +1,13 @@
 import 'package:flutter/services.dart';
-import 'package:vrgpsdk/gprinter_repository.dart';
+import 'package:vrgpsdk/domain/repositories/gprinter_repository.dart';
 
 class GPrinterRepositoryImpl implements GPrinterRepository {
-  final String methodChannelName = "VR_GPSDK";
-
   final String methodConnectToPrinter = "CONNECT_TO_PRINTER";
   final String methodPrintData = "PRINT_DATA";
 
-  late MethodChannel _methodChannel;
+  final MethodChannel _methodChannel;
 
-  GPrinterRepositoryImpl() {
-    _methodChannel = MethodChannel(methodChannelName);
-  }
+  GPrinterRepositoryImpl(this._methodChannel);
 
   @override
   Future<dynamic> connectToPrinter({
