@@ -19,7 +19,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 
 /** VrGPSdkPlugin */
 public class VrgpsdkPlugin implements FlutterPlugin, MethodCallHandler {
-  static final String METHOD_CHANNEL = "vr_gpsdk";
+  static final String METHOD_CHANNEL = "VR_GPSDK";
 
   private MethodChannel channel;
 
