@@ -66,10 +66,9 @@ public class VrgpsdkPlugin implements FlutterPlugin, MethodCallHandler {
 
       threadPool = ThreadPool.getInstantiation();
       threadPool.addTask(() -> {
-        DeviceConnFactoryManager.getDeviceConnFactoryManagers()[1].openPort();
+        boolean isConnected = DeviceConnFactoryManager.getDeviceConnFactoryManagers()[1].getConnState();
+        result.success(isConnected);
       });
-
-      result.success("A conexão com a impressora foi realizada com sucesso!");
     } catch (Exception exception) {
       System.out.println("Erro na conexao: " + exception.getMessage());
       result.error("ERROR_IN_CONNECTION", "Não foi possivel realizar conexão com impressora!", exception);
