@@ -30,7 +30,7 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     switch (call.method) {
-      case "CONNECT_TO_PRINTER":
+      case "CHECK_CONNECTION_PRINTER":
         handleConnectToPrinter(call, result);
         break;
       case "PRINT_DATA":
