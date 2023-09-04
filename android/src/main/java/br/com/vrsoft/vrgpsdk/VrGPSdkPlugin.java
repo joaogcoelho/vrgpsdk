@@ -78,6 +78,7 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
       Vector<Byte> datas = esc.getCommand();
 
+      threadPool = ThreadPool.getInstantiation();
       threadPool.addTask(() -> {
         Printer printer = new Printer(hostPrinter, portPrinter);
         printer.openPort();
