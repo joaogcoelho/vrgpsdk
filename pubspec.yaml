@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_web_plugins:
-    sdk: flutter
   plugin_platform_interface: ^2.0.2
 
 dev_dependencies:
@@ -24,15 +22,4 @@ flutter:
     platforms:
       android:
         package: br.com.vrsoft.vrgpsdk
-        pluginClass: VrgpsdkPlugin
-      ios:
-        pluginClass: VrgpsdkPlugin
-      linux:
-        pluginClass: VrgpsdkPlugin
-      macos:
-        pluginClass: VrgpsdkPlugin
-      windows:
-        pluginClass: VrgpsdkPluginCApi
-      web:
-        pluginClass: VrgpsdkWeb
-        fileName: vrgpsdk_web.dart
+        pluginClass: VrGPSdkPlugin
