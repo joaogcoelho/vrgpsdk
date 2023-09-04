@@ -51,6 +51,7 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
       threadPool = ThreadPool.getInstantiation();
       threadPool.addTask(() -> {
         Printer printer = new Printer(hostPrinter, portPrinter);
+        printer.openPort();
 
         boolean isConnected = printer.getConnState();
         result.success(isConnected);
@@ -79,13 +80,15 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
       threadPool.addTask(() -> {
         Printer printer = new Printer(hostPrinter, portPrinter);
+        printer.openPort();
 
         boolean isConnected = printer.getConnState();
+
+        System.out.println("TESTE PRINTER CONE - " + isConnected);
 
         if (isConnected) {
           printer.sendDataImmediately(datas);
           result.success(true);
-          return;
         }
 
         result.success(false);

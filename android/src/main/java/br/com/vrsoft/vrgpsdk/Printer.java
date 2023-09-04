@@ -15,8 +15,6 @@ public class Printer {
     public Printer(String ip, int port) {
         this.ip = ip;
         this.port = port;
-
-        openPort();
     }
 
     public enum CONN_METHOD {
