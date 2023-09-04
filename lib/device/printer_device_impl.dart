@@ -20,7 +20,11 @@ class PrinterDeviceImpl implements PrinterDevice {
     required String data,
   }) async {
     try {
-      final response = await _methodChannel.invokeMethod(methodPrintData, data);
+      final response = await _methodChannel.invokeMethod(methodPrintData, {
+        "host": host,
+        "port": port,
+        "data": data,
+      });
 
       return (response is bool) ? response : false;
     } catch (_) {
