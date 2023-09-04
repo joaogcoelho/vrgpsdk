@@ -89,12 +89,10 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
         if (isConnected) {
           printer.sendDataImmediately(datas);
-          result.success(true);
-          return;
         }
-
-        result.success(false);
       });
+
+      result.success(true);
     } catch (Exception exception) {
       result.error("ERROR_IN_CONNECTION", "Não foi possível realizar conexão com impressora!", exception);
     }
