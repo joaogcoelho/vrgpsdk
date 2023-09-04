@@ -90,6 +90,7 @@ public class VrGPSdkPlugin implements FlutterPlugin, MethodCallHandler {
         if (isConnected) {
           printer.sendDataImmediately(datas);
           result.success(true);
+          return;
         }
 
         result.success(false);
